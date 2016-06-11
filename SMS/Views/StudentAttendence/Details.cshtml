@@ -1,0 +1,66 @@
+﻿@model SMS.Models.StudentAttendence
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentAttendence</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassOrYears.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassOrYears.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalStudent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalStudent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FemaleStudentNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FemaleStudentNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPresentStudent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPresentStudent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentFemaleStudent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentFemaleStudent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

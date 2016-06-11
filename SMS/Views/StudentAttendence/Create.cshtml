@@ -1,0 +1,211 @@
+﻿@model SMS.ViewModels.ViewStudentAttendence
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @{
+    if (TempData["Message"] != "" && TempData["Message"] != null)
+    {
+        <div class="col-sm-12 col-md-12 col-lg-12 alert alert-info" role="alert">
+            <label id="Access"> @TempData["Message"]</label>
+        </div>
+        TempData["Message"] = "";
+    }
+        }
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="panel panel-info">
+            <div class="panel-heading">Student Attendence</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentAttendence.ClassOrYearId, "ClassOrYearId", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("StudentAttendence.ClassOrYearId", @Model.Class, "Select...", htmlAttributes: new { @class = "form-control", @onkeyup = "LoadSemester(this)", @onchange = "LoadSemester(this)" })
+                        @Html.ValidationMessageFor(model => model.StudentAttendence.ClassOrYearId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentAttendence.TotalStudent, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StudentAttendence.TotalStudent, new { htmlAttributes = new { @class = "form-control", @id = "TotalStudent" } })
+                        @Html.ValidationMessageFor(model => model.StudentAttendence.TotalStudent, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentAttendence.FemaleStudentNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StudentAttendence.FemaleStudentNo, new { htmlAttributes = new { @class = "form-control", @id = "FemaleStudentNo" } })
+                        @Html.ValidationMessageFor(model => model.StudentAttendence.FemaleStudentNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentAttendence.TotalPresentStudent, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StudentAttendence.TotalPresentStudent, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StudentAttendence.TotalPresentStudent, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentAttendence.PresentFemaleStudent, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StudentAttendence.PresentFemaleStudent, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StudentAttendence.PresentFemaleStudent, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.StudentAttendence.DateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StudentAttendence.DateTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StudentAttendence.DateTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-5 col-md-7">
+                        <input type="submit" value="Add" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                <table id="dataTable" class="table table-bordered">
+                    <thead>
+                <tr>
+                    <th>
+                        Class
+                    </th>
+                    <th>
+                        Total Student
+                    </th>
+                    <th>
+                        Total Female Student
+                    </th>
+                    <th>
+                        Total Present Student
+                    </th>
+                    <th>
+                        Present Female Studnet
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @*@{
+                       change here ................
+
+
+                        if (ViewBag.StudentList != null)
+                        {
+
+
+                            foreach (var item in ViewBag.StudentList)
+                            {
+                                <tr>
+                                    <td>@item.ClassOrYearId</td>
+                                    <td>@item.TotalStudent</td>
+                                    <td>@item.FemaleStudentNo</td>
+                                    <td>@item.TotalPresentStudent </td>
+                                    <td>@item.PresentFemaleStudent</td>
+                                    <td>@item.DateTime.ToShortDateString()</td>
+                                </tr>
+
+                            }
+
+                        }
+
+                    }*@
+
+                @foreach (var item in Model.StudentAttendenceList)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClassOrYears.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalStudent)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FemaleStudentNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalPresentStudent)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PresentFemaleStudent)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateTime)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+}
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+                <script type="text/javascript">
+
+                    function LoadSemester(ev) {
+                        var itemId = ev.value;
+                        var TheTextBox = document.getElementById("TotalStudent");
+                        var femalestdTextBox = document.getElementById("FemaleStudentNo");
+                        TheTextBox.value = "";
+                        femalestdTextBox.value = "";
+                        var param = JSON.stringify({ classCode: itemId });
+                        $.ajax({
+                            type: "POST",
+                            url: "/StudentAttendence/GetTotalStudent",
+                            data: param,
+                            dataType: "json",
+                            contentType: "application/json; charset=utf-8",
+                            success: function (response) {
+                                var alerttype = "danger";
+                                if (response.result === "success") {
+                                    TheTextBox.value = response.totaStudentCount;;
+                                    femalestdTextBox.value = response.femaleStudentCount;;
+
+                                }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                TheTextBox.value = "";
+                                femalestdTextBox.value = "";
+                            }
+                        });
+                    }
+
+
+
+                </script>
+            }

@@ -1,0 +1,31 @@
+
+NuGet Command:
+Install-Package
+Install- EntityFramework
+Install-Package bootbox
+Install-Package Bootstrap
+Install-Package Bootstrap.Datepicker
+
+
+
+StartupInstitute Command:
+
+enable-migrations -ContextTypeName StartupInstitute.Models.DbModels.MediaDbContext -MigrationsDirectory:InstituteDbMigrations
+enable-migrations -ContextTypeName StartupInstitute.Models.DbModels.InstituteDbContext -MigrationsDirectory:InstituteDbMigrations
+
+Add-Migration -configuration StartupInstitute.InstituteDbMigrations.Configuration Initial
+Add-Migration -configuration StartupInstitute.MediaDbMigrations.Configuration Initial
+
+Update-Database -configuration StartupInstitute.InstituteDbMigrations.Configuration -Verbose
+Update-Database -configuration StartupInstitute.MediaDbMigrations.Configuration -Verbose
+
+SMS Command:
+
+enable-migrations -ContextTypeName SMS.Models.ApplicationDbContext -MigrationsDirectory:SMSDbMigrations
+Add-Migration -configuration SMS.SMSDbMigrations.Configuration Initial
+Update-Database -configuration SMS.SMSDbMigrations.Configuration -Verbose
+
+Image:
+enable-migrations -ContextTypeName SMS.Models.DbModels.MediaDbContext -MigrationsDirectory:SMSMediaDbMigrations
+Add-Migration -configuration SMS.SMSMediaDbMigrations.Configuration Initial
+Update-Database -configuration SMS.SMSMediaDbMigrations.Configuration -Verbose
