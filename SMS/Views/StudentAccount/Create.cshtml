@@ -5,7 +5,7 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm("Create", "StudentAccount", FormMethod.Post, new { @id = "myForm",enctype = "multipart/form-data", @onkeydown = "return (event.keyCode!=13);" }))
+@using (Html.BeginForm("Create", "StudentAccount", FormMethod.Post, new { @id = "myForm", enctype = "multipart/form-data", @onkeydown = "return (event.keyCode!=13);" }))
 {
     @Html.AntiForgeryToken()
 
@@ -129,7 +129,7 @@
                                     @Html.ValidationMessageFor(model => model.StudentAccount.PassingYear, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                         
+
                             <div class="form-group">
                                 @Html.LabelFor(model => model.StudentAccount.PresentAddress, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
@@ -146,10 +146,10 @@
                                 </div>*@
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.StudentAccount.ConfirmDate, htmlAttributes: new {@class = "control-label col-md-4"})
+                                @Html.LabelFor(model => model.StudentAccount.ConfirmDate, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
-                                    @Html.EditorFor(model => model.StudentAccount.ConfirmDate, new {htmlAttributes = new {@class = "form-control"}})
-                                    @Html.ValidationMessageFor(model => model.StudentAccount.ConfirmDate, "", new {@class = "text-danger"})
+                                    @Html.EditorFor(model => model.StudentAccount.ConfirmDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StudentAccount.ConfirmDate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
@@ -246,26 +246,26 @@
                             </div>
 
                             <div class="form-group">
-                                    @Html.LabelFor(model => model.StudentAccount.RegDateTime, htmlAttributes: new {@class = "control-label col-md-4"})
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.StudentAccount.RegDateTime, new {htmlAttributes = new {@class = "form-control"}})
-                                        @Html.ValidationMessageFor(model => model.StudentAccount.RegDateTime, "", new {@class = "text-danger"})
-                                    </div>
+                                @Html.LabelFor(model => model.StudentAccount.RegDateTime, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.StudentAccount.RegDateTime, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StudentAccount.RegDateTime, "", new { @class = "text-danger" })
                                 </div>
+                            </div>
 
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.StudentAccount.FamilyIncome, htmlAttributes: new {@class = "control-label col-md-4"})
+                                @Html.LabelFor(model => model.StudentAccount.FamilyIncome, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
-                                    @Html.EditorFor(model => model.StudentAccount.FamilyIncome, new {htmlAttributes = new {@class = "form-control"}})
-                                    @Html.ValidationMessageFor(model => model.StudentAccount.FamilyIncome, "", new {@class = "text-danger"})
+                                    @Html.EditorFor(model => model.StudentAccount.FamilyIncome, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StudentAccount.FamilyIncome, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
-                                @Html.LabelFor(model => model.StudentAccount.MaritarialStatus, htmlAttributes: new {@class = "control-label col-md-4"})
+                                @Html.LabelFor(model => model.StudentAccount.MaritarialStatus, htmlAttributes: new { @class = "control-label col-md-4" })
                                 <div class="col-md-8">
-                                    @Html.EditorFor(model => model.StudentAccount.MaritarialStatus, new {htmlAttributes = new {@class = "form-control"}})
-                                    @Html.ValidationMessageFor(model => model.StudentAccount.MaritarialStatus, "", new {@class = "text-danger"})
+                                    @Html.EditorFor(model => model.StudentAccount.MaritarialStatus, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StudentAccount.MaritarialStatus, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
@@ -326,7 +326,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3">University/Board/Institute</label>
                                     <div class="col-md-9">
-                                        <input id="Institute" name="Institute" class="form-control" value=""/>
+                                        <input id="Institute" name="Institute" class="form-control" value="" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -434,7 +434,7 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
 
     var i = 0;
@@ -477,7 +477,7 @@
 
 
 
-    
+
     </script>
 
-    }
+}

@@ -252,8 +252,8 @@ namespace SMS.Controllers
                                 }
                                 else
                                 {
-                                    await UserManager.AddToRoleAsync(user.Id, user.SecurityRole);
-                                    ViewBag.Employee = user;
+                                    await UserManager.AddToRoleAsync(user.Id, SecurityRoles.Teacher);
+                                    TempData["Teacher"] = user;
                                     return Content("This Is Employee Account");
                                     //return RedirectToAction("Account", "Employee");
                                 }

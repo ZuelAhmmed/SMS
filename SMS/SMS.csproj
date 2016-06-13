@@ -164,6 +164,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentAccountController.cs" />
     <Compile Include="Controllers\StudentAttendenceController.cs" />
+    <Compile Include="Controllers\TeacherAccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,6 +266,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ViewStudentAccount.cs" />
     <Compile Include="ViewModels\ViewStudentAttendence.cs" />
+    <Compile Include="ViewModels\ViewTeacherAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -507,7 +509,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\StudentAccount\Create.cshtml" />
     <Content Include="Views\StudentAccount\Delete.cshtml" />
     <Content Include="Views\StudentAccount\Details.cshtml" />
     <Content Include="Views\StudentAccount\Edit.cshtml" />
@@ -517,6 +518,8 @@
     <Content Include="Views\StudentAttendence\Details.cshtml" />
     <Content Include="Views\StudentAttendence\Edit.cshtml" />
     <Content Include="Views\StudentAttendence\Index.cshtml" />
+    <Content Include="Views\StudentAccount\Create.cshtml" />
+    <Content Include="Views\TeacherAccount\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
