@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -203,6 +204,7 @@
     <Compile Include="PrimaryModels\CatOccupation.cs" />
     <Compile Include="PrimaryModels\CatSubject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Developer.cs" />
     <Compile Include="Security\PrimaryDataManager.cs" />
     <Compile Include="Security\SecurityRoles.cs" />
     <Compile Include="SMSDbMigrations\201605271133061_Initial.cs" />
@@ -380,6 +382,7 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -520,6 +523,15 @@
     <Content Include="Views\StudentAttendence\Index.cshtml" />
     <Content Include="Views\StudentAccount\Create.cshtml" />
     <Content Include="Views\TeacherAccount\Create.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\Shared\_HeadContentPartial.cshtml" />
+    <Content Include="Views\Shared\_LanguagePartial.cshtml" />
+    <Content Include="Views\Home\_ContentPartial.cshtml" />
+    <Content Include="Views\Home\_FacMemberMsgPartial.cshtml" />
+    <Content Include="Views\Home\_SidebarLeftPartial.cshtml" />
+    <Content Include="Views\Home\_SidebarRightPartial.cshtml" />
+    <Content Include="Views\Home\_SliderPartial.cshtml" />
+    <Content Include="Views\Home\_TeacherInfoSliderPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
