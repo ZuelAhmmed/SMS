@@ -140,7 +140,7 @@ namespace SMS.Controllers
             for (int i = 0; i < exam.Count(); i++)
             {
                 if (exam[i] != "")
-                {                  
+                {   
                     objStudentEducationalQualification.NidOrBirtgRegNo = objStudentAccount.StudentAccount.NidOrBirtgRegNo;
                     objStudentEducationalQualification.ExamOrDegree = exam[i];
                     objStudentEducationalQualification.RegNumber = regNo[i];
