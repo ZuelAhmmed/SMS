@@ -189,6 +189,8 @@
     <Compile Include="Models\PersonalDetailModels.cs" />
     <Compile Include="Models\QualificationModels.cs" />
     <Compile Include="Models\ResultModels.cs" />
+    <Compile Include="Models\RoomInformation.cs" />
+    <Compile Include="Models\ScheduleInformation.cs" />
     <Compile Include="Models\StudentAccount.cs" />
     <Compile Include="Models\StudentApplication.cs" />
     <Compile Include="Models\StudentEnrollment.cs" />
@@ -252,6 +254,14 @@
     <Compile Include="SMSDbMigrations\201606021437079_Initial9.cs" />
     <Compile Include="SMSDbMigrations\201606021437079_Initial9.Designer.cs">
       <DependentUpon>201606021437079_Initial9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSDbMigrations\201608202033204_Initial10.cs" />
+    <Compile Include="SMSDbMigrations\201608202033204_Initial10.Designer.cs">
+      <DependentUpon>201608202033204_Initial10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSDbMigrations\201608202036339_Initial11.cs" />
+    <Compile Include="SMSDbMigrations\201608202036339_Initial11.Designer.cs">
+      <DependentUpon>201608202036339_Initial11.cs</DependentUpon>
     </Compile>
     <Compile Include="SMSDbMigrations\Configuration.cs" />
     <Compile Include="SMSMediaDbMigrations\201605271137197_Initial.cs" />
@@ -643,7 +653,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -737,6 +749,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SMSDbMigrations\201606021437079_Initial9.resx">
       <DependentUpon>201606021437079_Initial9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSDbMigrations\201608202033204_Initial10.resx">
+      <DependentUpon>201608202033204_Initial10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSDbMigrations\201608202036339_Initial11.resx">
+      <DependentUpon>201608202036339_Initial11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SMSMediaDbMigrations\201605271137197_Initial.resx">
       <DependentUpon>201605271137197_Initial.cs</DependentUpon>
