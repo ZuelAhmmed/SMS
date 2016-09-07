@@ -1,0 +1,58 @@
+﻿@model SMS.Models.RoomInformation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RoomInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RmRoomNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RmRoomNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RmFloorNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RmFloorNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RmCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RmCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RmDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RmDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RmCampus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RmCampus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RmRoomId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

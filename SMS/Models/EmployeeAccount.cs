@@ -10,6 +10,11 @@ namespace SMS.Models
 {
     public class EmployeeAccount : BasicAccount
     {
+
+        public EmployeeAccount()
+        {
+            this.CourseGroups = new HashSet<CourseGroup>();
+        }
         public string EmployeeCatagoryId { get; set; }
         public string DesignationId { get; set; }
         public string SubjectCode { get; set; }
@@ -33,5 +38,7 @@ namespace SMS.Models
 
         [ForeignKey("SubjectCode")]
         public virtual Subject Subject { get; set; }
+
+        public virtual ICollection<CourseGroup> CourseGroups { get; set; }
     }
 }

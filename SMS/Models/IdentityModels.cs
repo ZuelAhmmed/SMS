@@ -129,7 +129,8 @@ namespace SMS.Models
         //Schedule Management Models
         public DbSet<ScheduleInformation> ScheduleInformations { get; set; }
         public DbSet<RoomInformation> RoomInformations { get; set; }
-
+        public DbSet<CourseContent> CourseContents { get; set; }
+        public DbSet<CourseGroup> CourseGroups { get; set; }
 
         //Security Models
         //public DbSet<UserSecurityRole> UserSecurityRoles { get; set; } //Change here

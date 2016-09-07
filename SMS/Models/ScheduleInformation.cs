@@ -15,11 +15,13 @@ namespace SMS.Models
         public long RmRoomId { get; set; }
         public string ShClass { get; set; }
         public string ShDay { get; set; }
+        //public string ShFromTime { get; set; }
+        //public string ShToTime { get; set; }
         public DateTime? ShFromTime { get; set; }
         public DateTime? ShToTime { get; set; }
         public string ShCourse { get; set; }
         public string ShSection { get; set; }
-
+        public string Year { get; set; }
         [ForeignKey("RmRoomId")]
         public virtual RoomInformation RoomInformation { get; set; }
     }

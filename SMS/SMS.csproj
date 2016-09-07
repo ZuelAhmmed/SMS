@@ -161,8 +161,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CourseContentController.cs" />
+    <Compile Include="Controllers\CourseGroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoomInformationController.cs" />
+    <Compile Include="Controllers\ScheduleInformationController.cs" />
     <Compile Include="Controllers\StudentAccountController.cs" />
     <Compile Include="Controllers\StudentAttendenceController.cs" />
     <Compile Include="Controllers\TeacherAccountController.cs" />
@@ -175,6 +179,8 @@
     <Compile Include="Models\AttendenceModels.cs" />
     <Compile Include="Models\CommitteeModels.cs" />
     <Compile Include="Models\ConfirmationCatagory.cs" />
+    <Compile Include="Models\CourseContent.cs" />
+    <Compile Include="Models\CourseGroup.cs" />
     <Compile Include="Models\CourseTeacherAssign.cs" />
     <Compile Include="Models\DbModels\MediaDbContext.cs" />
     <Compile Include="Models\EmployeeAccount.cs" />
@@ -265,6 +271,22 @@
     <Compile Include="SMSDbMigrations\201608202036339_Initial11.Designer.cs">
       <DependentUpon>201608202036339_Initial11.cs</DependentUpon>
     </Compile>
+    <Compile Include="SMSDbMigrations\201608250931406_Initial12.cs" />
+    <Compile Include="SMSDbMigrations\201608250931406_Initial12.Designer.cs">
+      <DependentUpon>201608250931406_Initial12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSDbMigrations\201608260852106_Initial13.cs" />
+    <Compile Include="SMSDbMigrations\201608260852106_Initial13.Designer.cs">
+      <DependentUpon>201608260852106_Initial13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSDbMigrations\201608261209006_Initial14.cs" />
+    <Compile Include="SMSDbMigrations\201608261209006_Initial14.Designer.cs">
+      <DependentUpon>201608261209006_Initial14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSDbMigrations\201608261251582_Initial15.cs" />
+    <Compile Include="SMSDbMigrations\201608261251582_Initial15.Designer.cs">
+      <DependentUpon>201608261251582_Initial15.cs</DependentUpon>
+    </Compile>
     <Compile Include="SMSDbMigrations\Configuration.cs" />
     <Compile Include="SMSMediaDbMigrations\201605271137197_Initial.cs" />
     <Compile Include="SMSMediaDbMigrations\201605271137197_Initial.Designer.cs">
@@ -276,11 +298,25 @@
     </Compile>
     <Compile Include="SMSMediaDbMigrations\Configuration.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ViewCourseGroup.cs" />
+    <Compile Include="ViewModels\ViewCourseGroupSchedule.cs" />
+    <Compile Include="ViewModels\ViewSchedule.cs" />
+    <Compile Include="ViewModels\ViewScheduleInformation.cs" />
     <Compile Include="ViewModels\ViewStudentAccount.cs" />
     <Compile Include="ViewModels\ViewStudentAttendence.cs" />
     <Compile Include="ViewModels\ViewTeacherAccount.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -407,7 +443,21 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="Content\bootstrap-datepicker.css.map" />
+    <Content Include="Content\bootstrap-datepicker.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datetimepicker-build.less" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
@@ -483,6 +533,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -544,6 +598,27 @@
     <Content Include="Views\Home\_SidebarRightPartial.cshtml" />
     <Content Include="Views\Home\_SliderPartial.cshtml" />
     <Content Include="Views\Home\_TeacherInfoSliderPartial.cshtml" />
+    <Content Include="Views\RoomInformation\Create.cshtml" />
+    <Content Include="Views\RoomInformation\Delete.cshtml" />
+    <Content Include="Views\RoomInformation\Details.cshtml" />
+    <Content Include="Views\RoomInformation\Edit.cshtml" />
+    <Content Include="Views\RoomInformation\Index.cshtml" />
+    <Content Include="Views\ScheduleInformation\Delete.cshtml" />
+    <Content Include="Views\ScheduleInformation\Details.cshtml" />
+    <Content Include="Views\ScheduleInformation\Edit.cshtml" />
+    <Content Include="Views\ScheduleInformation\Index.cshtml" />
+    <Content Include="Views\CourseContent\Create.cshtml" />
+    <Content Include="Views\CourseContent\Delete.cshtml" />
+    <Content Include="Views\CourseContent\Details.cshtml" />
+    <Content Include="Views\CourseContent\Edit.cshtml" />
+    <Content Include="Views\CourseContent\Index.cshtml" />
+    <Content Include="Views\CourseGroup\Create.cshtml" />
+    <Content Include="Views\CourseGroup\Delete.cshtml" />
+    <Content Include="Views\CourseGroup\Details.cshtml" />
+    <Content Include="Views\CourseGroup\Edit.cshtml" />
+    <Content Include="Views\CourseGroup\Index.cshtml" />
+    <Content Include="Views\CourseGroup\LoadCourseSchedule.cshtml" />
+    <Content Include="Views\ScheduleInformation\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -596,6 +671,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SMSDbMigrations\201608202036339_Initial11.resx">
       <DependentUpon>201608202036339_Initial11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSDbMigrations\201608250931406_Initial12.resx">
+      <DependentUpon>201608250931406_Initial12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSDbMigrations\201608260852106_Initial13.resx">
+      <DependentUpon>201608260852106_Initial13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSDbMigrations\201608261209006_Initial14.resx">
+      <DependentUpon>201608261209006_Initial14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSDbMigrations\201608261251582_Initial15.resx">
+      <DependentUpon>201608261251582_Initial15.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SMSMediaDbMigrations\201605271137197_Initial.resx">
       <DependentUpon>201605271137197_Initial.cs</DependentUpon>

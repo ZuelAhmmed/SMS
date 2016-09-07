@@ -1,0 +1,74 @@
+﻿@model SMS.Models.ScheduleInformation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ScheduleInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomInformation.RmRoomNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomInformation.RmRoomNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShFromTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShFromTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShToTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShToTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShCourse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShCourse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShSection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShSection)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ShScheduleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

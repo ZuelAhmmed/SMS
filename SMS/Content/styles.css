@@ -99,7 +99,8 @@ background-color:#4CAF50;
 #header-content {
     margin-top: 5px;
     min-height: 125px;
-    background: blueviolet;
+    background: #000031;
+   /*background: blueviolet; */ 
 }
 
 #logo {
@@ -260,7 +261,7 @@ background-color:#4CAF50;
 }
 
 .footer-panel>.panel {
-    min-height: 200px !important;
+    min-height: 150px !important;
 }
 
 .footer-panel>.panel>.panel-heading {
@@ -280,8 +281,8 @@ background-color:#4CAF50;
 
 .foot-panel-links>ul>li {
     margin: 1px auto;
-    font-weight: bold;
-    font-size: 16px;
+    /*font-weight: bold;   */  
+    font-size: 12px;
 }
 
 .foot-panel-links>ul>li>a {

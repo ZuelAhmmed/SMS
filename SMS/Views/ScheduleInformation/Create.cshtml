@@ -1,0 +1,416 @@
+﻿@using System.Globalization
+@model SMS.ViewModels.ViewSchedule
+@{
+    ViewBag.Title = "Create";
+}
+@using (Html.BeginForm("Create", "ScheduleInformation", FormMethod.Get))
+{
+    <div class="form-horizontal">
+        <h4>Schedule Information</h4>
+        <hr />
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-info">
+
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Schedule Information
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+
+                                <div class="form-group ">
+                                    <label id="Sem" class="col-md-2">Class</label>
+                                    <div class="col-md-8">
+                                        @*@Html.DropDownList("Class", null, htmlAttributes: new { @class = "form-control" })*@
+                                        @Html.DropDownList("ClassId", @Model.ClassId, string.Empty, new { @id = "Semester", @class = "form-control", @onchange = "CallChangefunc(this.value,this.name)" })
+                                    </div>
+                                    <div class="col-md-2" style="padding: 0px">
+                                        <input type="submit" value="Load" class="btn btn-default" />
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                            <div class="form-group col-lg-8 col-md-8 col-sm-8">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label id="DueDate" class="col-md-2" style="padding: 0px"> From</label>
+                                    <div class="col-md-8">
+                                        <div class='input-group date datetimepicker' id='datetimepicker'>
+                                            <input type='text' name="FromDate" id="FromDate" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-time"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label id="DueDate" class="col-md-2" style="padding: 0px"> To </label>
+                                    <div class="col-md-8">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' name="ToDate" id="ToDate" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-time"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <button type="button" class="btn btn-default" onclick="AddRow()">
+                                            Add
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        @*</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-horizontal">
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-info">
+
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    Student Info
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">*@
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                <div class="tab-content" style="overflow: auto; height: 332px; padding: 0px;">
+                                    <table class=" table table-striped  table-bordered" id="T1">
+                                        <tr>
+                                            <th>
+
+                                            </th>
+                                            <th>
+                                                Room Id
+                                            </th>
+                                            <th>
+                                                Location
+                                            </th>
+
+                                        </tr>
+
+                                        @foreach (var value in Model.RoomInformation)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" id="T1" name="@value.RmRoomId" value="@value.RmRoomId">
+                                                </td>
+
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => value.RmRoomNo)
+                                                </td>
+
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => value.RmDescription)
+                                                </td>
+
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                <div class="tab-content" style="overflow: auto; height: 332px; padding: 0px;">
+                                    <table class=" table table-striped table-bordered " id="T2">
+                                        <tr>
+                                            <th>
+                                            </th>
+                                            <th>
+                                                Day
+                                            </th>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="T2" name="ScheduleInfo.ShDay" value="SAT">
+                                            </td>
+                                            <td>
+                                                SAT
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="T2" name="ScheduleInfo.ShDay" value="SUN">
+                                            </td>
+                                            <td>
+                                                SUN
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="T2" name="ScheduleInfo.ShDay" value="MON">
+                                            </td>
+                                            <td>
+                                                MON
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="T2" name="ScheduleInfo.ShDay" value="TUE">
+                                            </td>
+                                            <td>
+                                                TUE
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+                                                <input type="checkbox" id="T2" name="ScheduleInfo.ShDay" value="WED">
+                                            </td>
+
+                                            <td>
+                                                WED
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+                                                <input type="checkbox" id="T2" name="ScheduleInfo.ShDay" value="THU">
+                                            </td>
+
+                                            <td>
+                                                THU
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="T2" name="ScheduleInfo.ShDay" value="FRI">
+                                            </td>
+                                            <td>
+                                                FRI
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+
+                                <div class="tab-content" style="overflow: auto; height: 332px; padding: 0px;">
+                                    <table class=" table table-striped table-bordered " id="T3">
+                                        <tr>
+                                            <th>
+                                            </th>
+                                            <th>
+                                                Start Time
+                                            </th>
+                                            <th>
+                                                End Time
+                                            </th>
+                                            <th>
+
+                                            </th>
+                                        </tr>
+                                        @foreach (var item in Model.ScheduleInformation)
+                                        {
+                                            var sHFromTime = item.ShFromTime.Value.ToString("h:mm tt", CultureInfo.CreateSpecificCulture("en-BD"));
+                                            var sHToTime = item.ShToTime.Value.ToString("h:mm tt", CultureInfo.CreateSpecificCulture("en-BD"));
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" id="T3" name="SHScheduleId" value="@sHFromTime-@sHToTime">
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sHFromTime)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => sHToTime)
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class=" col-md-10">
+                <input type="submit" value="Create" onclick="CreateSchedule()" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                format: 'LT'
+            });
+        });
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'LT'
+            });
+        });
+        //function CallChangefunc(val, name) {
+        //    window.location.href = "/gps_hierarchy/Create?value=" + val + "&name=" + name;
+        //}
+
+        function AddRow() {
+
+
+            var text1 = document.getElementById("FromDate");
+            var text2 = document.getElementById("ToDate");
+            var table = document.getElementById("T3");
+            var row = table.insertRow(table.rows.length);
+            if (text1.value !== "" && text2.value !== "") {
+                var cell0 = row.insertCell(0);
+                var cell1 = row.insertCell(1);
+                var cell2 = row.insertCell(2);
+                var cell3 = row.insertCell(3);
+                cell0.innerHTML = '<input type="checkbox" id="T3" name="SHScheduleId" value="' + text1.value + '-' + text2.value + '">';
+                cell1.innerHTML = text1.value;
+                cell2.innerHTML = text2.value;
+                cell3.innerHTML = '<input type="button" value="Edit" onclick="EditRow(this)">';
+            }
+
+        }
+
+        function EditRow(b) {
+
+            var i = b.parentNode.parentNode.rowIndex;
+            var text1 = document.getElementById("FromDate");
+            var text2 = document.getElementById("ToDate");
+            text1.value = document.getElementById("T3").rows[i].cells[1].innerHTML;
+            text2.value = document.getElementById("T3").rows[i].cells[2].innerHTML;
+
+            deleteRow(b);
+        }
+
+        function deleteRow(r) {
+            var i = r.parentNode.parentNode.rowIndex;
+            document.getElementById("T3").deleteRow(i);
+        }
+        var gSettings = {
+            "dataSavedMsg": "Data saved successfully!",
+            "dataNotSavedMsg": "Something went wrong. Data couldn't be saved!",
+            "deleteConfirm": "Are you sure want to delete?",
+            "deleteMsg": "Data deleted successfully!"
+        }
+
+        function CreateSchedule() {
+            var table1 = document.getElementById("T1");
+            var table2 = document.getElementById("T2");
+            var table3 = document.getElementById("T3");
+            var classId = document.getElementById("Semester").value;
+            var check = "false", msg = "", b = "false", c = "false";
+            var inputElems = document.getElementsByTagName("input");
+            //var rows1 = table1.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+            //var rows2 = table2.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+            //var rows3 = table3.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type === "checkbox" && inputElems[i].checked === true && inputElems[i].id === "T1") {
+                    check = "false";
+                    b = "false";
+                    c = "True";
+                    inputElems[i].checked = false;
+                    var roomId = inputElems[i].value;
+                    for (var k = 0; k < inputElems.length; k++) {
+                        if (inputElems[k].type === "checkbox" && inputElems[k].checked === true && inputElems[k].id === "T2") {
+                            check = "True";
+                            var day = inputElems[k].value;
+
+                            for (var l = 0; l < inputElems.length; l++) {
+                                if (inputElems[l].type === "checkbox" && inputElems[l].checked === true && inputElems[l].id === "T3") {
+                                    b = "True";
+                                    var schedule = inputElems[l].value;
+                                    var itemId = $(this).data("itemid");
+                                    var btnId = this;
+                                    var param = JSON.stringify({ roomId: roomId, day: day, time: schedule, classId: classId });
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "/ScheduleInformation/Create",
+                                        data: param,
+                                        dataType: "json",
+                                        contentType: "application/json; charset=utf-8",
+                                        success: function (response) {
+                                            var alerttype = "danger";
+                                            if (response.result === "success") {
+                                                alerttype = "success";
+                                                //deleteRow(BtnId);
+                                            }
+                                            //alert(gSettings.deleteMsg);
+
+                                        },
+                                        error: function (jqXHR, textStatus, errorThrown) {
+                                            //alert(errorThrown);
+                                            msg = "Something went wrong. Data couldn't be saved!";
+                                        }
+                                    });
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+            if (c === "false") {
+                msg = "No Data Select in Room Table";
+
+            }
+            else {
+                if (check === "false") {
+                    msg = "No Data Select in Day Table";
+
+                }
+                if (b === "false") {
+                    msg = "No Data Select in Schedule Table";
+
+                }
+            }
+
+            if (msg !== "") {
+
+                alert(msg);
+
+            }
+            else {
+                alert(gSettings.dataSavedMsg);
+            }
+
+
+        }
+
+
+    </script>
+}

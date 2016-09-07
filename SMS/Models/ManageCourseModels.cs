@@ -24,7 +24,7 @@ namespace SMS.Models
     {
         public ClassOrYear()
         {
-            
+            this.CourseGroups = new HashSet<CourseGroup>();
         }
 
         public ClassOrYear(string id, string className) : this()
@@ -42,6 +42,7 @@ namespace SMS.Models
         public virtual ICollection<StudentAttendence> StudentAttendences { get; set; } 
         public virtual ICollection<Subject> Subjects { get; set; }
         public virtual ICollection<StudentApplication> StudentApplications { get; set; }
+        public virtual ICollection<CourseGroup> CourseGroups { get; set; }
 
 
     }
