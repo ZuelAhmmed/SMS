@@ -38,6 +38,7 @@ namespace SMS.Controllers
         // GET: CourseContent/Create
         public ActionResult Create()
         {
+            ViewBag.ClassId = new SelectList(db.ClassOrYears, "Code", "Name");
             return View();
         }
 
@@ -54,7 +55,7 @@ namespace SMS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.ClassId = new SelectList(db.ClassOrYears, "Code", "Name");
             return View(courseContent);
         }
 

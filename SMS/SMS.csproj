@@ -169,7 +169,6 @@
     <Compile Include="Controllers\ScheduleInformationController.cs" />
     <Compile Include="Controllers\StudentAccountController.cs" />
     <Compile Include="Controllers\StudentAttendenceController.cs" />
-    <Compile Include="Controllers\TeacherAccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -588,7 +587,6 @@
     <Content Include="Views\StudentAttendence\Edit.cshtml" />
     <Content Include="Views\StudentAttendence\Index.cshtml" />
     <Content Include="Views\StudentAccount\Create.cshtml" />
-    <Content Include="Views\TeacherAccount\Create.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_HeadContentPartial.cshtml" />
     <Content Include="Views\Shared\_LanguagePartial.cshtml" />
