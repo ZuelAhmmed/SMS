@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CourseContentController.cs" />
     <Compile Include="Controllers\CourseGroupController.cs" />
+    <Compile Include="Controllers\EmployeeAccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoomInformationController.cs" />
@@ -285,6 +286,10 @@
     <Compile Include="SMSDbMigrations\201608261251582_Initial15.cs" />
     <Compile Include="SMSDbMigrations\201608261251582_Initial15.Designer.cs">
       <DependentUpon>201608261251582_Initial15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSDbMigrations\201609072006162_Initial16.cs" />
+    <Compile Include="SMSDbMigrations\201609072006162_Initial16.Designer.cs">
+      <DependentUpon>201609072006162_Initial16.cs</DependentUpon>
     </Compile>
     <Compile Include="SMSDbMigrations\Configuration.cs" />
     <Compile Include="SMSMediaDbMigrations\201605271137197_Initial.cs" />
@@ -617,6 +622,11 @@
     <Content Include="Views\CourseGroup\Index.cshtml" />
     <Content Include="Views\CourseGroup\LoadCourseSchedule.cshtml" />
     <Content Include="Views\ScheduleInformation\Create.cshtml" />
+    <Content Include="Views\EmployeeAccount\Create.cshtml" />
+    <Content Include="Views\EmployeeAccount\Delete.cshtml" />
+    <Content Include="Views\EmployeeAccount\Details.cshtml" />
+    <Content Include="Views\EmployeeAccount\Edit.cshtml" />
+    <Content Include="Views\EmployeeAccount\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -681,6 +691,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SMSDbMigrations\201608261251582_Initial15.resx">
       <DependentUpon>201608261251582_Initial15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSDbMigrations\201609072006162_Initial16.resx">
+      <DependentUpon>201609072006162_Initial16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SMSMediaDbMigrations\201605271137197_Initial.resx">
       <DependentUpon>201605271137197_Initial.cs</DependentUpon>

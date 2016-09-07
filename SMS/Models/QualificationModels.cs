@@ -63,44 +63,36 @@ namespace SMS.Models
     {
         [Key]
         public long Id { get; set; }
-
-       // [DisplayName("User Name")]
-      //  [Required(ErrorMessage = "Select User Name")]
         public string NidOrBirtgRegNo { get; set; }
-
-        [DisplayName("Education Level")]
-       // [Required(ErrorMessage = "Select Education Level")]
-        public string EducationLevelId { get; set; }
-
-        [DisplayName("Exam/Degree")]
-      //  [Required(ErrorMessage = "Select Exam/Degree")]
+        // public string EducationLevelId { get; set; }      
         public string ExamOrDegree { get; set; }
-
-        [DisplayName("Board/University")]
-       // [Required(ErrorMessage = "Select Board/University")]
         public string BoardOrUniversity { get; set; }
-
-        [DisplayName("Major Subject/Group")]
-     //   [Required(ErrorMessage = "Select Major Subject/Group")]
         public string MajorSubjectId { get; set; }
-
-        [DisplayName("Institute Name")]
-      //  [Required(ErrorMessage = "Type Institute Name.")]
         public string InstituteName { get; set; }
-
-      //  [DisplayName("Course Duration")]
         public string CourseDuration { get; set; }
-
-        [DisplayName("Passing Year")]
-     //   [Required(ErrorMessage = "Type Passing Year")]
         public string PassingYear { get; set; }
-
-        [DisplayName("Result")]
-     //   [Required(ErrorMessage = "Type Result, Like : 5.00, 1st Divison")]
         public string GpaOrDivison { get; set; }
-
-        //[ForeignKey("EducationLevelId")]
-        //public virtual EducationLevel EducationLevel { get; set; }
+        public string RegNumber { get; set; }
+        public string RollNumber { get; set; }
+        public string Group { get; set; }
+        //[Key]
+        //public long Id { get; set; }
+        //public string NidOrBirtgRegNo { get; set; }
+        //[DisplayName("Education Level")]
+        //public string EducationLevelId { get; set; }
+        //[DisplayName("Exam/Degree")]
+        //public string ExamOrDegree { get; set; }
+        //[DisplayName("Board/University")]
+        //public string BoardOrUniversity { get; set; }
+        //[DisplayName("Major Subject/Group")]
+        //public string MajorSubjectId { get; set; }
+        //[DisplayName("Institute Name")]
+        //public string InstituteName { get; set; }
+        //public string CourseDuration { get; set; }
+        //[DisplayName("Passing Year")]
+        //public string PassingYear { get; set; }
+        //[DisplayName("Result")]
+        //public string GpaOrDivison { get; set; }
 
     }
 
